@@ -9,3 +9,9 @@ survival-svm/beamertheme*
 survival-svm/fouodoBib.bib
 survival-svm/mypreamble.tex
 survival-svm/texput.log
+.Rproj*
+*.tex
+*.Rnw
+*.log
+*.gz
+*toc
