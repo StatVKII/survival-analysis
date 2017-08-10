@@ -174,13 +174,3 @@ tunwrp.gm.reg <- tuneWrapperGammaMu(type = "regression",
                                     iters.rep = 5)
 bench.vet.ssvm.reg <- benchmark(learners = tunwrp.gm.reg, tasks = veteran_task,
                                 resamplings = outer, measures = list(c.i))
-save(bench.vet.ssvm.reg, file = "benchVetSsvmReg.rda")
-lapply(bench.vet.ssvm.reg$results$veteran.adj$surv.survivalsvm.preproc.tuned$
-         measures.test, function(i){
-           a <- CI(i)
-           err <- a[1] - a[2]
-           mittelwert <- a[2]
-           r <- round(c(mittelwert, err), 2)
-           names(r) <- c("mean", "error")
-           return(r)
-         })
